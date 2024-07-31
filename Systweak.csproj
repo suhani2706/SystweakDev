@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="images\download.png" />
     <Content Include="js\script.js" />
     <Content Include="Login.aspx" />
     <Content Include="ResetPassword.aspx" />

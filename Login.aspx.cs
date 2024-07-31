@@ -94,8 +94,6 @@ namespace Systweak
         }
         private void SendOTP(string email)
         {
-
-
             string from, pass, messageBody;
             Random rand = new Random();
             randomCode = (rand.Next(999999)).ToString();
