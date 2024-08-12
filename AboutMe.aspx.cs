@@ -7,26 +7,31 @@ using System.Web.UI.WebControls;
 
 namespace Systweak
 {
-    public partial class Welcome : System.Web.UI.Page
+    public partial class AboutMe : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
+        protected void btnMyWork_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("MyWork.aspx"); // Example: Redirect to an About Me page
+        }
         protected void btnHome_Click(object sender, EventArgs e)
         {
-
-            Response.Redirect("Welcome.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("Welcome.aspx");
         }
+
+        protected void btnAbout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AboutMe.aspx");
+        }
+
         protected void btnResume_Click(object sender, EventArgs e)
         {
-
-            Response.Redirect("Resume.aspx"); // Example: Redirect to an About Me page
-        }
-        protected void btnAboutMe_Click(object sender, EventArgs e)
-        {
-
-            Response.Redirect("AboutMe.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("Resume.aspx");
         }
         protected void btnGitHub_Click(object sender, EventArgs e)
         {
@@ -46,17 +51,6 @@ namespace Systweak
         protected void btnEmail_Click(object sender, EventArgs e)
         {
             Response.Redirect("mailto:your-email@example.com");
-        }
-
-        protected void btnLogIn_Click(object sender, EventArgs e)
-        {
-
-            Response.Redirect("Login.aspx"); // Example: Redirect to an About Me page
-        }
-        protected void btnSignUp_Click(object sender, EventArgs e)
-        {
-
-            Response.Redirect("SignUp.aspx"); // Example: Redirect to an About Me page
         }
 
     }

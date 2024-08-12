@@ -11,7 +11,7 @@ namespace Systweak
 {
 
 
-    public partial class Welcome
+    public partial class AboutMe
     {
 
         /// <summary>
@@ -42,13 +42,13 @@ namespace Systweak
         protected global::System.Web.UI.WebControls.Button btnAbout;
 
         /// <summary>
-        /// Button1 control.
+        /// btnResume control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnResume;
 
         /// <summary>
         /// btnContact control.
@@ -96,48 +96,21 @@ namespace Systweak
         protected global::System.Web.UI.WebControls.Button btnEmail;
 
         /// <summary>
-        /// btnLogin control.
+        /// btnMyWork control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnMyWork;
 
         /// <summary>
-        /// btnSignUp control.
+        /// imgMe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignUp;
-
-        /// <summary>
-        /// imgLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
-
-        /// <summary>
-        /// btnAboutMe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAboutMe;
-
-        /// <summary>
-        /// btnResume control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnResume;
+        protected global::System.Web.UI.WebControls.Image imgMe;
     }
 }

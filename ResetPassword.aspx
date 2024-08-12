@@ -28,15 +28,14 @@
             --bs-body-bg: #B4D4FF;
             --bs-body-color: #212529;
             --bs-border-radius: 0.375rem;
-            --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    
+            --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);    
         }
 
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--bs-dark);
+           
             padding: 10px 0;
             z-index: 1000;
             box-shadow: var(--bs-box-shadow);
@@ -46,7 +45,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1140px;
+            max-width: 1160px;
             margin: 0 auto;
         }
         .header .inner-container {
@@ -64,10 +63,10 @@
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
         .header nav ul li {
-            margin: 0;
+            margin: 0px;
         }
         .header nav ul li a {
             color: var(--bs-white);
@@ -75,11 +74,16 @@
             font-size: 16px;
             padding: 6px 12px;
             border-radius: var(--bs-border-radius);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s;           
+            border: 2px solid white;             
+            display: inline-block; 
+            border-radius: 5px;
         }
+        
         .header nav ul li a:hover,
         .header nav ul li a.active {
             background-color: var(--bs-gray);
+            color: var(--bs-white);
         }
         .header-social-links {
             display: flex;
@@ -97,17 +101,13 @@
             margin-right: 50px;
         }
         .card {
-            background-color: #EEF5FF;            
+            background-color: rgba(255, 255, 255, 0.7); 
             border-radius: 15px;
-            border: 1px groove #808080;  
-            min-height: auto;
-            margin-top: 100px; 
+            border: 1px groove #808080;
+            margin-top: 100px;
             padding: 20px;
-            backdrop-filter: blur(50px);
-            max-height: 90vh;
-            overflow-y: auto;
+            backdrop-filter: blur(70px);
             box-shadow: var(--bs-box-shadow);
-            box-sizing: border-box;
         }
         body {
             background-color: var(--bs-body-bg); /* Apply background color */
@@ -120,19 +120,57 @@
              height: 100px;            
              margin-top: 1px;
         }
+        .full-height {
+            position: relative;
+            background-image: url('https://wallpapers.com/images/hd/minimalist-nature-r17v20du803pf0x1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensure the image covers the entire area */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;            
+        }
     </style>
 </head>
 <body>
+    <header class="header animate__animated animate__fadeInDown">
+        <div class="container">
+            <div class="inner-container">
+                <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
     <form id="form1" runat="server">
-        <section class="body">
-            <div class="body">
-                <div class="row justify-content-center align-items-center h-100">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="mb-3">
-                                    <img src="images/picture.png" alt="Logo" class="logo-img" />
-                                </div>
+         <header class="header animate__animated animate__fadeInDown">
+        <div class="container">
+            <div class="inner-container">
+                <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="Welcome.aspx" class="btn btn-outline-light">Home</a></li>
+                        <li><a href="contact.html" class="btn btn-outline-light">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+         <section class="full-height" data-aos="fade-in" data-aos-duration="1000">
+             <div class="container py-5 h-100">
+                 <div class="row justify-content-center align-items-center h-100">
+                     <div class="col-md-8 text-center">
+                         <div class="card" data-aos="zoom-in" data-aos-delay="500">
+                             <div class="card-body">
+                                 <div class="mb-4">
+                                     <img src="images/picture.png" alt="Logo" class="logo-img" />
+                                 </div>
                                 <h4 class="fw-normal mb-4">Reset Password</h4>
                                 <div class="form-group">
                                     <label for="txtNewPassword" class="col-form-label" style="text-align: left; width: 100%;"><strong>Enter new password:</strong></label>

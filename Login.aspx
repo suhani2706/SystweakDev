@@ -21,7 +21,7 @@
             --bs-black: #000;
             --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif;
             --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-            --bs-body-bg: #B4D4FF;
+            --bs-body-bg: #4B717E;
             --bs-body-color: #212529;
             --bs-border-radius: 0.375rem;
             --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -32,7 +32,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--bs-dark);
+            
             padding: 10px 0;
             z-index: 1000;
             box-shadow: var(--bs-box-shadow);
@@ -71,7 +71,10 @@
             font-size: 16px;
             padding: 6px 12px;
             border-radius: var(--bs-border-radius);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s;           
+            border: 2px solid white;             
+            display: inline-block; 
+            border-radius: 5px;
         }
         .header nav ul li a:hover,
         .header nav ul li a.active {
@@ -105,6 +108,18 @@
             box-shadow: var(--bs-box-shadow);
             box-sizing: border-box;
         }
+        .full-height {
+            position: relative;
+            background-image: url('https://wallpapers.com/images/hd/minimalist-nature-r17v20du803pf0x1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensure the image covers the entire area */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;            
+        }
         body {
             background-color: var(--bs-body-bg); /* Apply background color */
         }
@@ -119,8 +134,34 @@
     </style>    
 </head>
 <body>
+    <header class="header animate__animated animate__fadeInDown">
+        <div class="container">
+            <div class="inner-container">
+                <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
     <form id="form1" runat="server">
-        <section class="full-height">
+        <header class="header animate__animated animate__fadeInDown">
+                <div class="container">
+                    <div class="inner-container">
+                        <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                        <nav class="navbar">
+                            <ul>
+                                <li><a href="Welcome.aspx" class="btn btn-outline-light">Home</a></li>
+                                <li><a href="contact.html" class="btn btn-outline-light">Support</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        <section class="full-height" data-aos="fade-in" data-aos-duration="1000">
             <div class="container py-5 h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-md-6">
@@ -162,7 +203,7 @@
                                      <asp:Button ID="btnVerify" runat="server" Text="Verify OTP" CssClass="btn small-button" OnClick="btnVerify_Click" />
                                  </div>
                                 <div class="text-center mt-3">
-                                    <a href="#!" class="small text-muted" style="color: #333333;">Terms of use. Privacy policy</a>
+                                    <a href="#!" class="small text-muted" style="color: #333333; margin-top: 0.1rem;">Terms of use. Privacy policy</a>
                                 </div>
                             </div>
                         </div>
