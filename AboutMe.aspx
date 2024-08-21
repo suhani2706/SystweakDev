@@ -171,7 +171,7 @@
         }
 
         .dropdown-menu {
-            display: none; =
+            display: none; 
             position: absolute;
             top: 100%;
             left: 0;
@@ -212,26 +212,56 @@
             color: white;
     
         }
-        .gif-image {
-            height: 200px; /* Adjust this value as needed */
-            width: auto; /* Maintain the aspect ratio */
-            object-fit: cover; /* Ensures the image fits well */
-            
+        .skill-sec {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width:750px;
         }
+
+        .skill-box {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .image-backg{
+            position: relative;
+            display: inline-block;
+            background-color: rgba(12, 76, 133, 1);
+            padding: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .image-background img {
+            display: block; 
+        }
+
 
     </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
         <header class="header animate__animated animate__fadeInDown">
             <div class="container">
                 <div class="inner-container">
-                    <h2>About Me</h2>
+                    <h2>SUHANI</h2>
                     <nav class="navbar">
                         <ul>
                             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btn btn-no-bg" OnClick="btnHome_Click" />
                             <asp:Button ID="btnAbout" runat="server" Text="About" CssClass="btn active" OnClick="btnAbout_Click" />
-                            <asp:Button ID="btnResume" runat="server" Text="Resume" CssClass="btn btn-no-bg" OnClick="btnResume_Click" />
+                            
+                             <asp:Button ID="btnMyWork" runat="server" Text="My Work" CssClass="btn btn-outline-dark mr-2 btn-custom btn-no-bg" OnClick="btnMyWork_Click" />
 
                             <li class="dropdown">
                                 <asp:Button ID="btnContact" runat="server" Text="Contact" CssClass="btn dropdown-toggle btn-no-bg" data-toggle="dropdown" />
@@ -245,7 +275,7 @@
                         </ul>
                     </nav>
                     <div>
-                        <asp:Button ID="btnMyWork" runat="server" Text="My Work" CssClass="btn btn-outline-dark mr-2 btn-custom btn-no-bg" OnClick="btnMyWork_Click" />
+                       <asp:Button ID="btnResume" runat="server" Text="Resume" CssClass="btn btn-no-bg" OnClick="btnResume_Click" />
                     </div>
                 </div>
             </div>
@@ -293,36 +323,33 @@
                 <div class="row">
                     <!-- Column for Image -->
                     <div class="col-lg-8 pt-4 pt-lg-0 content left">
-                         <h3 >UI/UX Designer</h3>
-                         <p class="fst-italic" >
-                             I am dedicated to staying up-to-date with the latest industry trends and best practices, constantly honing my skills to deliver cutting-edge solutions. Adaptable and collaborative, I excel in dynamic team environments and enjoy collaborating with designers and back-end developers to achieve project goals efficiently.
-                         </p>
-                         <div class="row" style="margin-left: 10px;">
-                             <div class="col-lg-4">
-                                 <ul>
-                                     <li><strong>Full Name:</strong> Suhani Mathur</li>
-                                     <li><strong>Birthday:</strong> 27 June 2005</li>
-                                     <li><strong>Phone:</strong> 8949511209</li>
-                                     <li><strong>City:</strong> Jaipur, India</li>
-                                 </ul>
-                             </div>
-                             <div class="col-lg-6">
-                                 <ul>
-                                     <li><strong>Age:</strong> 19</li>
-                                     <li><strong>Degree:</strong> Pursuing B.Tech</li>
-                                     <li><strong>Email:</strong> suhanim2705@gmail.com</li>
-                                     <li><strong>Freelance:</strong> Available</li>
-                                 </ul>
-                             </div>
+                         <h3>Skills</h3><br />
+                         <p class="fst-italic" style="width:700px;" >
+                             With a strong foundation in UI/UX design and a growing expertise in frontend web development, I bring a unique blend of creativity and technical proficiency. Below, you'll find a snapshot of the skills I've developed to create engaging, user-friendly interfaces and seamless web experiences.                         </p>
+                        <br /> 
+                        <div class="skill-sec" style="margin-left: 10px;">
+                             <div class="skill-box">Figma</div>    
+                             <div class="skill-box">User-Centerd Design</div>
+                             <div class="skill-box">Wireframing</div>
+                             <div class="skill-box">Prototyping</div>
+                             <div class="skill-box">Responsive design</div>
+                             <div class="skill-box">Typography</div>
+                             <div class="skill-box">Color Theory</div>
+                             <div class="skill-box">HTML</div>
+                             <div class="skill-box">CSS</div>
+                             <div class="skill-box">Javascript</div>
+                             <div class="skill-box">ASP.NET</div>
                          </div>
                     </div>
                     <!-- Column for Content -->
                     <div class="col-lg-4 image-container right" >
-                        <img src="https://s5.ezgif.com/tmp/ezgif-5-fed8afad40.gif" class="img-fluid gif-image" alt="Skill GIF" />
-                       
+                        <div class="image-backg">
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/Skills.gif" CssClass="img-fluid" Width="500" Height="260" style="margin-left:10px;" AlternateText="Your description here" />
+                       </div>
                     </div>
                 </div>
-            </div>
+            </div><br />
+             <asp:Button ID="Resume" runat="server" Text="Go To My Resume" CssClass="btn" OnClick="btnHome_Click" /><br /><br />
         </section>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

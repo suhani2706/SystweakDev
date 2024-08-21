@@ -16,17 +16,27 @@ namespace Systweak
         protected void btnHome_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("Welcome.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("Welcome.aspx"); 
         }
         protected void btnResume_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("Resume.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("Resume.aspx"); 
         }
         protected void btnAboutMe_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("AboutMe.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("AboutMe.aspx");
+        }
+        protected void btnMyWork_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("MyWork.aspx"); // Example: Redirect to an About Me page
+        }
+        protected void btnContact_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Contact.aspx"); 
         }
         protected void btnGitHub_Click(object sender, EventArgs e)
         {
@@ -51,12 +61,12 @@ namespace Systweak
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("Login.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("Login.aspx"); 
         }
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("SignUp.aspx"); // Example: Redirect to an About Me page
+            Response.Redirect("SignUp.aspx"); 
         }
 
     }

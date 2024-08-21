@@ -42,13 +42,13 @@ namespace Systweak
         protected global::System.Web.UI.WebControls.Button btnAbout;
 
         /// <summary>
-        /// btnResume control.
+        /// btnMyWork control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnResume;
+        protected global::System.Web.UI.WebControls.Button btnMyWork;
 
         /// <summary>
         /// btnContact control.
@@ -96,13 +96,13 @@ namespace Systweak
         protected global::System.Web.UI.WebControls.Button btnEmail;
 
         /// <summary>
-        /// btnMyWork control.
+        /// btnResume control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMyWork;
+        protected global::System.Web.UI.WebControls.Button btnResume;
 
         /// <summary>
         /// imgMe control.
@@ -112,5 +112,23 @@ namespace Systweak
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgMe;
+
+        /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
+        /// Resume control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Resume;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Login.aspx.cs" Inherits="Systweak.Login" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="~/Login.aspx.cs" Inherits="Systweak.Login" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,96 +21,108 @@
             --bs-black: #000;
             --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif;
             --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-            --bs-body-bg: #4B717E;
+            --bs-body-bg: #B4D4FF;
             --bs-body-color: #212529;
             --bs-border-radius: 0.375rem;
             --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    
         }
 
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            
+            background-color: #173c61;
             padding: 10px 0;
             z-index: 1000;
             box-shadow: var(--bs-box-shadow);
             color: var(--bs-white);
         }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-        .header .inner-container {
-            display: flex;
-            align-items: center;
-            width: 90%;
-            justify-content: space-between;
-        }
-        .header h1 a, header h1 {
-            color: var(--bs-white);
-            margin-left:10px ;
-        }
-        .header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-        .header nav ul li {
-            margin: 0;
-        }
-        .header nav ul li a {
-            color: var(--bs-white);
-            text-decoration: none;
-            font-size: 16px;
-            padding: 6px 12px;
-            border-radius: var(--bs-border-radius);
-            transition: background-color 0.3s;           
-            border: 2px solid white;             
-            display: inline-block; 
-            border-radius: 5px;
-        }
-        .header nav ul li a:hover,
-        .header nav ul li a.active {
-            background-color: var(--bs-gray);
-        }
+
+            .header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1140px;
+                margin: 0 auto;
+            }
+
+            .header .inner-container {
+                display: flex;
+                align-items: center;
+                width: 90%;
+                justify-content: space-between;
+            }
+
+            .header h1 a, header h1 {
+                color: var(--bs-white);
+                margin-left: 10px;
+            }
+
+            .header nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                gap: 20px;
+            }
+
+                .header nav ul li {
+                    margin: 0;
+                }
+
+                    .header nav ul li a {
+                        color: var(--bs-white);
+                        text-decoration: none;
+                        font-size: 16px;
+                        padding: 6px 12px;
+                        border-radius: var(--bs-border-radius);
+                        transition: background-color 0.3s;
+                        border: 2px solid white;
+                        display: inline-block;
+                        border-radius: 5px;
+                    }
+
+                        .header nav ul li a:hover,
+                        .header nav ul li a.active {
+                            background-color: var(--bs-gray);
+                        }
+
         .header-social-links {
             display: flex;
             align-items: center;
         }
-        .header-social-links a {
-            color: var(--bs-white);
-            margin-left: 10px;
-            font-size: 18px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .header-social-links a:hover {
-            color: var(--bs-primary);
-            margin-right: 50px;
-        }
+
+            .header-social-links a {
+                color: var(--bs-white);
+                margin-left: 10px;
+                font-size: 18px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .header-social-links a:hover {
+                    color: var(--bs-primary);
+                    margin-right: 50px;
+                }
+
         .card {
-            background-color: #EEF5FF;            
+            background-color: #EEF5FF;
             border-radius: 15px;
-            border: 1px groove #808080;  
+            border: 1px groove #808080;
             min-height: auto;
-            margin-top: 100px; 
+            margin-top: 100px;
             padding: 20px;
             backdrop-filter: blur(50px);
-            max-height: 90vh;
+            max-height: auto;
+            max-width: auto;
             overflow-y: auto;
             box-shadow: var(--bs-box-shadow);
             box-sizing: border-box;
         }
+
         .full-height {
             position: relative;
-            background-image: url('https://wallpapers.com/images/hd/minimalist-nature-r17v20du803pf0x1.jpg');
+            background-color: var(--bs-body-bg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover; /* Ensure the image covers the entire area */
@@ -118,49 +130,56 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;            
+            overflow: hidden;
         }
+
         body {
             background-color: var(--bs-body-bg); /* Apply background color */
         }
+
         a.small.text-muted {
             color: #000 !important;
         }
+
         .logo-img {
-             width: 100px; 
-             height: 100px;            
-             margin-top: 1px;
+            width: 100px;
+            height: 100px;
+            margin-top: 1px;
         }
-    </style>    
+        .btn-no-bg {
+            background-color: transparent; 
+            border: 2px solid #000;
+            color: black;            
+        }
+    </style>
+    <script>
+        function submitFormAjax(event) {
+            event.preventDefault();
+            var ajxForm = document.getElementById("ajxForm");
+            var data = new FormData(ajxForm);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "");
+            xhr.send(data);
+            return false;
+        }
+    </script>
+
 </head>
 <body>
-    <header class="header animate__animated animate__fadeInDown">
-        <div class="container">
-            <div class="inner-container">
-                <h1 class="logo"><a href="index.html">SUHANI</a></h1>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html">Support</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <form id="form1" runat="server">
+    <form id="ajxForm" runat="server">
         <header class="header animate__animated animate__fadeInDown">
-                <div class="container">
-                    <div class="inner-container">
-                        <h1 class="logo"><a href="index.html">SUHANI</a></h1>
-                        <nav class="navbar">
-                            <ul>
-                                <li><a href="Welcome.aspx" class="btn btn-outline-light">Home</a></li>
-                                <li><a href="contact.html" class="btn btn-outline-light">Support</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+            <div class="container">
+                <div class="inner-container">
+                    <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="Welcome.aspx" class="btn btn-outline-light">Home</a></li>
+                            <li><a href="contact.html" class="btn btn-outline-light">Support</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </header>
+            </div>
+        </header>
         <section class="full-height" data-aos="fade-in" data-aos-duration="1000">
             <div class="container py-5 h-100">
                 <div class="row justify-content-center align-items-center h-100">
@@ -170,38 +189,38 @@
                                 <div class="mb-3">
                                     <img src="images/picture.png" alt="Logo" class="logo-img" />
                                 </div>
-                                <h4 class="fw-normal mb-4">Login</h4> 
-                                
+                                <h4 class="fw-normal mb-4">Login</h4>
+
                                 <div class="form-group">
                                     <label for="txtEmail" class="col-form-label" style="text-align: left; width: 100%;"><strong>Email address</strong></label>
                                     <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter Email" CssClass="form-control form-control-lg" required="required"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <label for="txtPassword"class="col-form-label" style="text-align:left; width: 100%;"><strong>Password</strong></label>
-                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter Password" CssClass="form-control form-control-lg" required="required"></asp:TextBox>
+                                    <label for="txtPassword" class="col-form-label" style="text-align: left; width: 100%;"><strong>Password</strong></label>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter Password" CssClass="form-control form-control-lg" required="required"></asp:TextBox>                                   
                                 </div>
-                                
-                                     <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-dark btn-lg btn-block" OnClick="btnLogin_Click" />
-                                 
+
+                                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-dark btn-lg btn-block" OnClick="btnLogin_Click" />
+
                                 <div class="form-row mt-3">
                                     <div class="form-group col">
                                         <div class="form-check text-left">
                                             <asp:CheckBox ID="chkRemember" runat="server" CssClass="form-check-input" Checked="true" />
                                             <label class="form-check-label" for="chkRemember">Remember me</label>
                                         </div>
-                                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label> 
+                                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                     </div>
                                     <div class="form-group col text-right">
                                         <a class="small text-muted" href="ForgotPassword.aspx" style="color: black;">Forgot password?</a>
                                     </div>
                                 </div>
-                                   <p class="mb-3 pb-lg-2" style="color:black;">Don't have an account? <a href="SignUp.aspx" style="color: black;">Sign Up</a></p>
+                                <p class="mb-3 pb-lg-2" style="color: black;">Don't have an account? <a href="SignUp.aspx" style="color: black;">Sign Up</a></p>
 
-                                 <div class="text-center mt-3" id="txtVerifyContainer" runat="server">
-                                     <label for="txtVerify">Enter OTP:</label>
-                                     <asp:TextBox ID="txtVerify" runat="server" CssClass="form-control mb-2"></asp:TextBox>
-                                     <asp:Button ID="btnVerify" runat="server" Text="Verify OTP" CssClass="btn small-button" OnClick="btnVerify_Click" />
-                                 </div>
+                                <div class="text-center mt-3" id="txtVerifyContainer" runat="server">
+                                    <label for="txtVerify">Enter OTP:</label>
+                                    <asp:TextBox ID="txtVerify" runat="server" CssClass="form-control mb-2"></asp:TextBox>
+                                    <asp:Button ID="btnVerify" runat="server" Text="Verify OTP" CssClass="btn btn-no-bg" OnClick="btnVerify_Click" />
+                                </div>
                                 <div class="text-center mt-3">
                                     <a href="#!" class="small text-muted" style="color: #333333; margin-top: 0.1rem;">Terms of use. Privacy policy</a>
                                 </div>
@@ -210,12 +229,14 @@
                     </div>
                 </div>
             </div>
-        </section>      
+        </section>
     </form>
-
     <!-- Bootstrap JS and dependencies (place at the end of the body for faster page load) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpOpy86WkK7+60Y5w5v7nK8tv/tIqtmbPjEMKaM/D8VLFjf1vvOJNq9s" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlJ/Mu3thO+hPmCr5tyO5Ck9czPjqI+Pq0IM+7VDaOB63pr2h9ZZOr1Rm8p" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgGAKV7nU1H1BOE77MiGwdg6sFLz0BGFh3jqSrL04D+XWJ0tjNL" crossorigin="anonymous"></script>
+
+
+
 </body>
 </html>

@@ -111,6 +111,7 @@
             margin-top: 100px;
             padding: 20px;
             box-shadow: var(--bs-box-shadow);
+            width:auto;
         }
 
         body {
@@ -152,34 +153,49 @@
             border-color: black;
         }
 
+
+         .full-height {
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Dynamic Backgrounds for Different Times of Day */
+        .morning {
+            background-image: url('https://e0.pxfuel.com/wallpapers/901/168/desktop-wallpaper-relaxing-to-work-better-and-to-be-more-productive-concentration-pc.jpg');
+        }
+        .afternoon {
+            background-image: url('https://img.freepik.com/premium-vector/minimalist-collection-modern-abstract-mountain-with-landscape-bohemian-style_236657-214.jpg');
+        }
+        .evening {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/015/639/644/non_2x/abstract-minimal-modern-landscape-sunset-illustration-background-vector.jpg');
+        }
+        .night {
+            background-image: url('https://wallpapercave.com/wp/wp8667455.png');
+        }
+
+        .header .logo a {
+            color: black; 
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold; 
+            font-family: 'Arial', sans-serif;
+            transition: color 0.3s ease; 
+        }
+
+        .logo a:hover {
+            color: #555; /* Optional: Change color on hover */
+        }
         .logo-img {
             width: 100px;
             height: 100px;
             margin-top: 1px;
         }
-
-        .full-height {
-            position: relative;
-            background-image: url('https://i.pinimg.com/originals/fc/b1/94/fcb194122dffd8f2dabe56d67c768525.gif');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .full-height .content {
-            position: relative;
-            z-index: 2;
-            color: #1F67AF;
-        }
-        .logo-img {
-            width: 100px;
-            height: 100px;
-        }
+        
         .logo-jiggle {
             display: inline-block; /* Required for animation to work properly */
             transition: transform 0.3s ease; /* Smooth transition effect */
@@ -197,22 +213,30 @@
         .btn {
             position: relative;
             z-index: 10;
-            background-color: black;
-            color: white;
+            background-color: transparent;
+            color: black; 
+            border: 2px solid black;
         }
         .btn-custom {
-        pointer-events: auto; 
+            pointer-events: auto;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
         }
         .btn:hover {
             background-color: white;
             color: black;
             border: 1px solid black;
         }
+        .btn-active{
+            background-color: black;
+            color: white;
+            border: 3px solid black;
+        }
 
-
-        .btn:active, .btn:focus {
-            background-color: white;
-            color: black;
+        .btn:active , btn:focus{
+            background-color: black;
+            color: white;
             outline: none;
             border: 1px solid black; 
         }
@@ -265,8 +289,54 @@
         .btn-no-bg {
             background-color: transparent; 
             border: 2px solid #000;
-            color: black;
-            
+            color: black;            
+        }
+        .greeting {
+            font-size: 30px;
+            color: #000; /* Assuming a light text color for dark backgrounds */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header.night-mode {
+            background-color: transparent; /* White background color */
+            color: #000000; /* Dark text color */
+        }
+
+        .header.night-mode .logo a {
+            color: #ffffff; 
+        }
+
+        .header.night-mode .navbar {
+            background-color: transparent; /* White background color */
+        }
+
+        .header.night-mode .navbar .btn {
+            background-color: transparent; /* Transparent background */
+            color: #000000; /* Dark text color */
+        }
+
+        .header.night-mode .navbar .dropdown-menu {
+            background-color: #000000; /* White background color */
+            color: #000000; /* Dark text color */
+        }
+
+        .header.night-mode .navbar .dropdown-item {
+            color: #ffffff; /* Dark text color */
+        }
+
+        .header.night-mode .btn.btn-outline-dark {
+            border-color: #ffffff; /* White border color */
+            color: #ffffff; /* Dark text color */
+        }
+        .header.night-mode .btn.active{
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .header.night-mode .btn:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid white;
         }
 
     </style>
@@ -276,15 +346,15 @@
         <header class="header animate__animated animate__fadeInDown">
             <div class="container">
                 <div class="inner-container">
-                    <h1 class="logo"><a href="Welcome.aspx" style="color:#000;">SUHANI</a></h1>
+                    <h1 class="logo"><a href="Welcome.aspx">SUHANI</a></h1>
                     <nav class="navbar">
                         <ul>
-                            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btn active" OnClick="btnHome_Click" />
-                            <asp:Button ID="btnAbout" runat="server" Text="About" CssClass="btn btn-no-bg" OnClick="btnAboutMe_Click" />
-                            <asp:Button ID="Button1" runat="server" Text="Resume" CssClass="btn btn-no-bg" OnClick="btnResume_Click" />
+                            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btn btn-active" OnClick="btnHome_Click" />
+                            <asp:Button ID="btnAbout" runat="server" Text="About" CssClass="btn btn-outline-dark" OnClick="btnAboutMe_Click" />
+                           <asp:Button ID="btnMyWork" runat="server" Text="My Work" CssClass="btn btn-outline-dark" OnClick="btnMyWork_Click" />
 
                             <li class="dropdown">
-                                <asp:Button ID="btnContact" runat="server" Text="Contact" CssClass="btn dropdown-toggle btn-no-bg" data-toggle="dropdown" />
+                                <asp:Button ID="btnContact" runat="server" Text="Contact" CssClass="btn btn-outline-dark dropdown-toggle btn-no-bg" data-toggle="dropdown"/>
                                 <div class="dropdown-menu animate__animated animate__fadeIn">
                                     <asp:Button ID="btnGitHub" runat="server" Text="GitHub" CssClass="dropdown-item" OnClick="btnGitHub_Click" />
                                     <asp:Button ID="btnInstagram" runat="server" Text="Instagram" CssClass="dropdown-item" OnClick="btnInstagram_Click" />
@@ -312,7 +382,7 @@
                                     <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/picture.png" CssClass="logo-img logo-jiggle" />
 
                                 </div>
-                                <h1 class="mb-4" id="welcomeMessage">Welcome to My Portfolio!</h1>
+                                <div class="greeting" id="greetingMessage"></div>
                                 <p class="lead mb-2 animate__animated animate__fadeIn">I'm Suhani Mathur.</p>
                                 <p class="lead mb-4 animate__animated animate__fadeIn">I'm a passionate web developer and a UI/UX Designer, specializing in creating innovative and user-friendly web applications. Explore my work and let's connect!</p>
                                 <asp:Button ID="btnAboutMe" runat="server" Text="About Me" CssClass="btn btn-outline-dark mr-2 btn-custom" OnClick="btnAboutMe_Click" />
@@ -331,6 +401,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init();
+
+        // JavaScript for dynamic background based on the time of day
+        window.onload = function () {
+            var currentHour = new Date().getHours();
+            var bodyClass = '';
+            var greetingMessage = '';
+            var header = document.querySelector('.header');
+
+            if (currentHour >= 0 && currentHour < 12) {
+                bodyClass = 'morning'; // Morning time (6 AM to 12 PM)
+                greetingMessage = 'Good Morning!';
+                header.classList.remove('night-mode');
+            } else if (currentHour >= 12 && currentHour < 18) {
+                bodyClass = 'afternoon'; // Afternoon time (12 PM to 6 PM)
+                greetingMessage = 'Good Afternoon!';
+                header.classList.remove('night-mode');
+            } else if (currentHour >= 18 && currentHour < 21) {
+                bodyClass = 'evening'; // Evening time (6 PM to 9 PM)
+                greetingMessage = 'Good Evening!';
+                header.classList.remove('night-mode');
+            } else {
+                bodyClass = 'night'; // Night time (9 PM to 6 AM)
+                greetingMessage = 'Good Evening!';
+                header.classList.add('night-mode');
+            }
+
+
+
+            var backgroundSelection = document.querySelector('.full-height');
+            backgroundSelection.classList.add(bodyClass);
+
+            var greetingElement = document.getElementById('greetingMessage');
+            greetingElement.textContent = greetingMessage;
+        };
     </script>
 </body>
 </html>

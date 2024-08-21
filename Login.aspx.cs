@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Net.NetworkInformation;
 using NuGet.Common;
+using System.Web.Services;
 
 namespace Systweak
 {
@@ -22,11 +23,13 @@ namespace Systweak
             {
                 // Hide the OTP input on the initial load
                 txtVerifyContainer.Visible = false;
+                
             }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
-        {
+        {   
+               
             string email = txtEmail.Text;
             string password = txtPassword.Text;
 
@@ -35,10 +38,6 @@ namespace Systweak
             {
                 // Send OTP
                 SendOTP(email);
-
-
-
-                // Notify user
                 lblMessage.Text = "OTP has been sent to your email.";
                 lblMessage.ForeColor = System.Drawing.Color.Green;
                 lblMessage.Visible = true;
@@ -70,8 +69,7 @@ namespace Systweak
                 lblMessage.Visible = true;
             }
         }
-
-        private bool ValidateCredentials(string email, string password)
+        [WebMethod]private bool ValidateCredentials(string email, string password)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
             bool isValid = false;

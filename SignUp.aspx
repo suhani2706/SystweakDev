@@ -33,7 +33,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--bs-dark);
+            background-color: #173c61;
             padding: 10px 0;
             z-index: 1000;
             box-shadow: var(--bs-box-shadow);
@@ -72,7 +72,10 @@
             font-size: 16px;
             padding: 6px 12px;
             border-radius: var(--bs-border-radius);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s;           
+            border: 2px solid white;             
+            display: inline-block; 
+            border-radius: 5px;
         }
         .header nav ul li a:hover,
         .header nav ul li a.active {
@@ -119,10 +122,32 @@
         }
     </style>
     <script>
+        $(document).ready(function () {
+            $('#formSignUp').submit(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                if (validatePassword()) {
+                    $.ajax({
+                        type: "POST",
+                        url: "SignUp.aspx/SignUpUser", // AJAX call to the server-side method
+                        data: JSON.stringify({ email: $('#<%= txtEmail.ClientID %>').val(), password: $('#<%= txtPassword.ClientID %>').val() }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            alert(response.d); // Display the server response
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + xhr.responseText); // Display any error messages
+                        }
+                    });
+                }
+            });
+        });
+
         function validatePassword() {
             var password = document.getElementById('<%= txtPassword.ClientID %>').value;
             var confirmPassword = document.getElementById('<%= txtConfirmPassword.ClientID %>').value;
-        var passwordError = document.getElementById('<%= lblPasswordError.ClientID %>');
+            var passwordError = document.getElementById('<%= lblPasswordError.ClientID %>');
             var confirmPasswordError = document.getElementById('<%= lblConfirmPasswordError.ClientID %>');
             var passwordPattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}$/;
 
@@ -149,6 +174,19 @@
 </head>
 <body>
     <form id="formSignUp" runat="server">
+        <header class="header animate__animated animate__fadeInDown">
+            <div class="container">
+                <div class="inner-container">
+                    <h1 class="logo"><a href="index.html">SUHANI</a></h1>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
         <section class="full-height">
             <div class="container py-5 h-100">
                 <div class="row justify-content-center align-items-center h-100">
@@ -203,6 +241,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlJ/Mu3thO+hPmCr5tyO5Ck9czPjqI+Pq0IM+7VDaOB63pr2h9ZZOr1Rm8p" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgGAKV7nU1H1BOE77MiGwdg6sFLz0BGFh3jqSrL04D+XWJ0tjNL" crossorigin="anonymous"></script>
-   <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
